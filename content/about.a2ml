@@ -1,0 +1,88 @@
+---
+title: About STAMP Protocol
+description: Understanding the Subscriber Tracking with Attribution and Mathematically Proven consent protocol
+author: Jonathan D.A. Jewell
+date: 2026-01-30
+---
+
+# About STAMP Protocol
+
+**STAMP** stands for **S**ubscriber **T**racking with **A**ttribution and **M**athematically **P**roven consent.
+
+## The Problem
+
+Email marketing systems often fail to provide:
+
+- **Verifiable consent** - Subscribers can't prove they consented
+- **Unbreakable unsubscribe** - Links can break or be malicious
+- **Transparent tracking** - Users don't know what's being tracked
+- **Cryptographic proof** - No mathematical guarantees of consent state
+
+## The Solution
+
+STAMP provides a **formally verified** consent management system:
+
+### Key Features
+
+1. **Proven URL Validation**
+   - Uses `ProvenSafeUrl` from the proven library
+   - Mathematical guarantee URLs are well-formed
+   - No null pointer crashes possible
+   - Compile-time verification via Idris2
+
+2. **Cryptographic Consent Proofs**
+   - Every consent action generates a proof
+   - Timestamped and cryptographically signed
+   - Subscriber can verify their consent state
+   - Marketer can prove compliance
+
+3. **Unbreakable Unsubscribe**
+   - Links validated before generation
+   - No malformed URLs possible
+   - Always HTTPS (proven at type level)
+   - Rate-limiting and abuse protection
+
+4. **Full Transparency**
+   - Subscribers see all tracked data
+   - Consent history available on-demand
+   - Deletion requests cryptographically logged
+   - GDPR/CCPA compliance by design
+
+## Architecture
+
+STAMP uses **The Elm Architecture** (TEA) for predictable state management:
+
+```
+User Action → Message → Update → New Model → View
+```
+
+All state transitions are **pure functions** with **no side effects**.
+
+## Formal Verification
+
+The core URL validation is **formally verified** using Idris2 dependent types:
+
+- **No runtime URL parsing errors** - Proven impossible
+- **Balanced HTML tags** - Checked at compile time
+- **Memory safety** - No buffer overflows possible
+- **Type safety** - Guaranteed correct operations
+
+See the [proven library](https://github.com/hyperpolymath/proven) for details.
+
+## Try It Out
+
+1. Visit the [interactive demo](/demo)
+2. See URL validation in action
+3. Explore the consent flow
+4. View cryptographic proofs
+
+## Learn More
+
+- [STAMP Specification](https://github.com/hyperpolymath/stamp-protocol)
+- [ReScript TEA](https://github.com/hyperpolymath/rescript-tea)
+- [Proven Library](https://github.com/hyperpolymath/proven)
+- [SafeDOM Mounter](https://github.com/hyperpolymath/rescript-dom-mounter)
+
+---
+
+*STAMP Protocol - Consent you can prove.*
