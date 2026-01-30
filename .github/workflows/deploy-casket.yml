@@ -26,10 +26,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
 
+      - name: Install Pandoc (optional)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc || echo "Pandoc install failed, will use fallback"
+
       - name: Build site with Casket-SSG
         run: |
           chmod +x casket-simple
-          ./casket-simple build content _site
+          ./casket-simple build content _site || {
+            echo "Build with Pandoc failed, trying without..."
+            # Pandoc not available, casket should use built-in parser
+            ./casket-simple build content _site
+          }
           # Copy assets
           cp -r assets _site/
 
