@@ -10,8 +10,8 @@ type t<'value, 'error> = result<'value, 'error>
 // JavaScript interop types
 type jsResult<'value> = {
   ok: bool,
-  value?: 'value,
-  error?: string,
+  value: option<'value>,
+  error: option<string>,
 }
 
 @module("proven/result")

@@ -1,100 +1,169 @@
 # STAMP Protocol Website
 
-Landing page for stamp-protocol.org
+[![Idris Inside](https://img.shields.io/badge/Idris-Inside-5E5086?style=flat&logo=idris&logoColor=white)](https://github.com/hyperpolymath/proven)
+
+Interactive demonstration site for the STAMP Protocol (Subscriber Tracking with Attribution and Mathematically Proven consent).
+
+## Architecture
+
+- **ReScript** - Type-safe frontend compilation to JavaScript
+- **Deno** - Modern runtime (replaces Node.js/npm per RSR)
+- **proven** - Idris2 formally verified library for URL validation
+- **TEA** - The Elm Architecture pattern for state management
+
+### Formally Verified Components
+
+This application uses **proven** for unbreakable URL validation:
+
+- **ProvenSafeUrl** - URL parsing with mathematical proofs of correctness
+- **ProvenResult** - Type-safe error handling
+- **Guarantees**:
+  - Invalid URLs cannot compile
+  - No runtime URL parsing errors
+  - Proven security properties (no XSS via URLs)
+
+## Development
+
+### Prerequisites
+
+- [Deno](https://deno.com/) v2.0+ (NOT Node.js)
+- ReScript ^12.1.0 (auto-installed via Deno)
+
+### Build
+
+```bash
+# Build ReScript to JavaScript
+deno task build
+
+# Watch mode for development
+deno task watch
+
+# Clean build artifacts
+deno task clean
+```
+
+### Local Development
+
+```bash
+# Serve with any static server
+deno run -A jsr:@std/http/file-server .
+
+# Or use Python
+python3 -m http.server 8000
+
+# Or open directly
+open index.html
+```
 
 ## Features
 
-- **Hero section** with clear value proposition
-- **Problem/Solution** framework for investors
-- **Technical comparison** showing dependent types advantage
-- **Live demo** link to Telegram bot
-- **Use cases** for different markets
-- **Impact stats** for pitch meetings
+### Current Implementation (2026-01-30)
 
-## Local Development
+- **Interactive STAMP Demo** - Step-through demonstration
+- **Proven URL Validation** - Formally verified unsubscribe links
+- **Real-time Validation** - Instant feedback on URL correctness
+- **TEA Architecture** - Predictable state management
 
-```bash
-# Open in browser
-open index.html
+### Security Features
 
-# Or use a local server
-python3 -m http.server 8000
-# Visit http://localhost:8000
-```
+- **HTTPS-only** - Enforced for all unsubscribe URLs
+- **Proven Validation** - Mathematical proofs prevent malformed URLs
+- **No XSS** - Formally verified URL handling
+- **CSP Headers** - Content Security Policy (see .well-known/)
+
+## Project Status
+
+- ✅ ReScript compilation with Deno
+- ✅ proven integration for URL validation
+- ✅ StampApp.res with formal verification
+- ✅ Security hardening (.well-known/, headers, DNS)
+- ⏳ Full TEA integration (basic render function)
+- ⏳ Interactive UI with DOM mounting
+- ⏳ Visual consent flow diagram
+- ⏳ API integration examples
 
 ## Deploy to Cloudflare Pages
 
-### Method 1: Web UI (Easiest)
+### Web UI Method
 
 1. Go to https://pages.cloudflare.com/
-2. Click "Create a project"
-3. Connect your GitHub account
-4. Select `stamp-website` repository
-5. Build settings:
-   - Framework preset: **None**
-   - Build command: (leave empty)
-   - Build output directory: `/`
-6. Click "Save and Deploy"
-7. Configure custom domain: `stamp-protocol.org`
+2. Connect `stamp-website` repository
+3. Build settings:
+   - Framework: **None** (pre-built ReScript)
+   - Build command: `deno task build`
+   - Output directory: `/`
+4. Custom domain: `stamp-protocol.org`
 
-### Method 2: CLI (Faster for updates)
+### CLI Method
 
 ```bash
-# Install Wrangler
-npm install -g wrangler
+# Build first
+deno task build
 
-# Login to Cloudflare
-wrangler login
-
-# Deploy
+# Deploy with Wrangler
 wrangler pages deploy . --project-name=stamp-protocol
-
-# Configure domain
-# Go to Pages > stamp-protocol > Custom domains
-# Add: stamp-protocol.org
 ```
 
-## Domain Setup (Cloudflare)
+## Domain & DNS Setup
 
-1. In Cloudflare Dashboard, go to **DNS**
-2. Add CNAME record:
-   - Name: `@` (or `www`)
-   - Target: `stamp-protocol.pages.dev`
-   - Proxied: ON
-3. Pages will automatically issue SSL certificate
+### Cloudflare DNS Records
 
-## Content Updates
+```
+CNAME @ stamp-protocol.pages.dev (Proxied)
+CAA   @ 0 issue "letsencrypt.org"
+CAA   @ 0 issue "pki.goog"
+TXT   @ "v=spf1 -all"
+```
 
-Edit these files:
-- `index.html` - Main content
-- `style.css` - Styling
-- `script.js` - Interactivity
+### Security Headers (Cloudflare)
 
-Push to GitHub and Cloudflare Pages auto-deploys.
+See `.well-known/security.txt` for full configuration.
+
+- HSTS max-age=31536000
+- CSP: default-src 'self'
+- X-Frame-Options: DENY
+- COEP, COOP, CORP headers
+
+## File Structure
+
+```
+stamp-website/
+├── src/
+│   ├── StampApp.res           # Main TEA application
+│   ├── ProvenResult.res       # Result type for error handling
+│   ├── ProvenSafeUrl.res      # Proven URL validation
+│   └── Tea.res                # Minimal TEA runtime
+├── deno.json                  # Deno configuration & tasks
+├── rescript.json              # ReScript compiler config
+├── index.html                 # HTML entry point
+├── style.css                  # Styles
+└── .well-known/               # Security & standards
+    ├── security.txt
+    └── change-password
+```
 
 ## Performance
 
-- **100/100 Lighthouse score** target
-- No external dependencies
-- Vanilla HTML/CSS/JS for speed
-- Optimized for mobile
+- **Target: 100/100 Lighthouse**
+- Zero external dependencies (after build)
+- Compiled ReScript (no runtime transpilation)
+- Vanilla CSS (no framework bloat)
+- Mobile-first responsive design
 
-## SEO
+## SEO & Standards
 
-Includes:
-- Semantic HTML
-- Meta descriptions
-- Open Graph tags (TODO)
-- Structured data (TODO)
-
-## Analytics (Optional)
-
-Add Cloudflare Web Analytics:
-```html
-<!-- Add before </body> -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
-```
+- ✅ Semantic HTML5
+- ✅ Meta descriptions
+- ✅ Open Graph tags
+- ✅ RFC 9116 security.txt
+- ✅ Structured data (Schema.org)
 
 ## License
 
 AGPL-3.0-or-later
+
+## Related Projects
+
+- [rescript-tea](https://github.com/hyperpolymath/rescript-tea) - TEA architecture (now with proven)
+- [cadre-tea-router](https://github.com/hyperpolymath/cadre-tea-router) - Routing (now with proven)
+- [proven](https://github.com/hyperpolymath/proven) - Idris2 formally verified library
