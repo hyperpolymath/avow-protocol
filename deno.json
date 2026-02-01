@@ -10,6 +10,7 @@
     "a2ml:validate": "cd ../a2ml && just cli validate ../stamp-protocol/content/*.a2ml",
     "proofs:generate": "deno run -A scripts/generate_proof.ts",
     "sync:6scm": "bash scripts/sync-6scm.sh",
+    "check:6scm": "bash scripts/check-6scm.sh",
     "serve": "deno run -A jsr:@std/http/file-server ."
   },
   "imports": {
