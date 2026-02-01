@@ -12,6 +12,7 @@ Protocol design that aims to make consent, unsubscribe, and rate-limit complianc
 
 [Try Live Demo on Telegram →](https://t.me/stamp_demo_bot)
 [Learn How It Works](#how-it-works)
+[Read the protocol draft →](docs/PROTOCOL.md)
 
 ## The Problem
 
@@ -100,6 +101,10 @@ See STAMP in action with our live Telegram bot (demo flow):
 5. Send `/unsubscribe` to test the demo flow
 
 [Open @stamp_demo_bot →](https://t.me/stamp_demo_bot)
+
+### Demo Notes
+
+The browser demo performs structural checks (URL parsing + HTTPS) and simulates proof flow. Full proofs are part of the protocol draft.
 
 ## Use Cases
 

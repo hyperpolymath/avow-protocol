@@ -1,13 +1,14 @@
 # STAMP Protocol
 
 [![Idris Inside](https://img.shields.io/badge/Idris-Inside-5E5086?style=flat&logo=idris&logoColor=white)](https://github.com/hyperpolymath/proven)
+![Protocol Draft](https://img.shields.io/badge/Protocol-Draft-blue)
 
 Reference site and interactive demo for STAMP Protocol concepts (Subscriber Tracking with Attribution and Mathematically Proven consent).
 
 ## What It Does
 
 - Demonstrates STAMP flows end-to-end.
-- Shows how verifiable consent and unsubscribe flows could work.
+- Shows how verifiable consent and unsubscribe flows could work (demo-level checks).
 - Ships a clean, static front end for easy hosting.
 
 ## Where It Is Going
@@ -77,7 +78,7 @@ open index.html
 ### Current Implementation (2026-01-30)
 
 - **Interactive STAMP Demo** - Step-through demonstration
-- **URL Validation** - Demonstrates safe URL checks
+- **URL Validation** - Demonstrates safe URL checks (browser-level)
 - **Real-time Validation** - Instant feedback on URL correctness
 - **TEA Architecture** - Predictable state management
 
