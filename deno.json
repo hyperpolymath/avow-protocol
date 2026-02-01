@@ -17,7 +17,6 @@
     "proven/": "../proven/bindings/rescript/src/"
   },
   "compilerOptions": {
-    "allowJs": true,
     "checkJs": false
   }
 }
