@@ -1,5 +1,5 @@
 ;; SPDX-License-Identifier: AGPL-3.0-or-later
-;; STATE.scm - Project state tracking for stamp-website
+;; STATE.scm - Project state tracking for stamp-protocol
 
 (define state
   (metadata
@@ -7,8 +7,8 @@
     (schema-version "1.0")
     (created "2026-01-30")
     (updated "2026-01-30")
-    (project "stamp-website")
-    (repo "https://github.com/hyperpolymath/stamp-website"))
+    (project "stamp-protocol")
+    (repo "https://github.com/hyperpolymath/stamp-protocol"))
 
   (project-context
     (name "STAMP Protocol Website")

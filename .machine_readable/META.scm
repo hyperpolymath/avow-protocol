@@ -1,5 +1,5 @@
 ;; SPDX-License-Identifier: AGPL-3.0-or-later
-;; META.scm - Meta-level information for stamp-website
+;; META.scm - Meta-level information for stamp-protocol
 
 (define meta
   (architecture-decisions
@@ -13,9 +13,9 @@
         "Use minimal ReScript TEA application without heavy framework."
         "Rationale:"
         "- STAMP demo is inherently client-side (no backend needed yet)"
-        "- ReScript provides type safety without TypeScript complexity"
+        "- ReScript provides type safety with small, predictable output"
         "- TEA architecture makes state predictable and testable"
-        "- Deno replaces Node.js per RSR language policy"
+        "- Deno provides a clean, permissioned runtime"
         "- Minimal bundle size for fast loading")
       (consequences
         "Positive: Fast, type-safe, minimal dependencies, easy to understand"
@@ -87,9 +87,9 @@
 
     (documentation
       "README.md - User-facing setup and usage"
-      "STATE.scm - Current project state and roadmap"
-      "ECOSYSTEM.scm - Relationships to other projects"
-      "META.scm - This file - architecture and philosophy"
+      ".machine_readable/STATE.scm - Current project state and roadmap"
+      ".machine_readable/ECOSYSTEM.scm - Relationships to other projects"
+      ".machine_readable/META.scm - This file - architecture and philosophy"
       "Code comments - Why, not what (code explains what)")
 
     (branching
@@ -106,9 +106,8 @@
       "Strong pattern matching for state machines")
 
     (why-deno
-      "RSR language policy mandates Deno over Node.js"
-      "Better security model (explicit permissions)"
-      "Built-in TypeScript support (if needed for MCP)"
+      "Permissioned runtime model for safer tooling"
+      "Simple task runner and dependencies"
       "Modern URL imports instead of node_modules")
 
     (why-proven

@@ -1,13 +1,25 @@
-# STAMP Protocol Website
+# STAMP Protocol
 
 [![Idris Inside](https://img.shields.io/badge/Idris-Inside-5E5086?style=flat&logo=idris&logoColor=white)](https://github.com/hyperpolymath/proven)
 
-Interactive demonstration site for the STAMP Protocol (Subscriber Tracking with Attribution and Mathematically Proven consent).
+Reference site and interactive demo for the STAMP Protocol (Subscriber Tracking with Attribution and Mathematically Proven consent).
+
+## What It Does
+
+- Demonstrates STAMP flows end-to-end.
+- Validates unsubscribe URLs with formally verified logic.
+- Ships a clean, static front end for easy hosting.
+
+## Where It Is Going
+
+- Expand the demo to cover more protocol paths.
+- Add integration examples for production systems.
+- Improve visualization and accessibility of consent flows.
 
 ## Architecture
 
 - **ReScript** - Type-safe frontend compilation to JavaScript
-- **Deno** - Modern runtime (replaces Node.js/npm per RSR)
+- **Deno** - Build and task runner
 - **proven** - Idris2 formally verified library for URL validation
 - **TEA** - The Elm Architecture pattern for state management
 
@@ -26,7 +38,7 @@ This application uses **proven** for unbreakable URL validation:
 
 ### Prerequisites
 
-- [Deno](https://deno.com/) v2.0+ (NOT Node.js)
+- [Deno](https://deno.com/) v2.0+
 - ReScript ^12.1.0 (auto-installed via Deno)
 
 ### Build
@@ -87,7 +99,7 @@ open index.html
 ### Web UI Method
 
 1. Go to https://pages.cloudflare.com/
-2. Connect `stamp-website` repository
+2. Connect `stamp-protocol` repository
 3. Build settings:
    - Framework: **None** (pre-built ReScript)
    - Build command: `deno task build`
@@ -127,7 +139,7 @@ See `.well-known/security.txt` for full configuration.
 ## File Structure
 
 ```
-stamp-website/
+stamp-protocol/
 ├── src/
 │   ├── StampApp.res           # Main TEA application
 │   ├── ProvenResult.res       # Result type for error handling

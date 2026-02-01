@@ -1,16 +1,16 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # K9 Contractile: Kennel Level (Pure Data)
-# Project metadata for stamp-website
+# Project metadata for stamp-protocol
 
 {
   leash = 'Kennel,
 
   project = {
-    name = "stamp-website",
+    name = "stamp-protocol",
     version = "1.0.0",
     description = "Interactive demonstration of STAMP Protocol consent architecture",
     homepage = "https://stamp-protocol.org",
-    repository = "https://github.com/hyperpolymath/stamp-website",
+    repository = "https://github.com/hyperpolymath/stamp-protocol",
 
     license = "AGPL-3.0-or-later",
     author = {

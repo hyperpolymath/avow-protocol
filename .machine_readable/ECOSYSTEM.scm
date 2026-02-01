@@ -1,16 +1,16 @@
 ;; SPDX-License-Identifier: AGPL-3.0-or-later
-;; ECOSYSTEM.scm - Ecosystem relationships for stamp-website
+;; ECOSYSTEM.scm - Ecosystem relationships for stamp-protocol
 
 (ecosystem
   (version "1.0.0")
-  (name "stamp-website")
+  (name "stamp-protocol")
   (type "demonstration-site")
   (purpose
     "Interactive landing page demonstrating STAMP Protocol consent architecture"
     "Showcases formally verified URL validation for unsubscribe links")
 
   (position-in-ecosystem
-    "stamp-website is the public-facing demonstration of STAMP Protocol concepts."
+    "stamp-protocol is the public-facing demonstration of STAMP Protocol concepts."
     "It serves as:"
     "- Educational reference for how proven formal verification works in practice"
     "- Interactive showcase of consent flow with provable security"
@@ -71,5 +71,4 @@
   (what-this-is-not
     "NOT a full STAMP Protocol implementation (see stamp-protocol-spec for that)"
     "NOT a production consent management platform (just a demo)"
-    "NOT a general-purpose web framework (specific to STAMP use case)"
-    "NOT using TypeScript/Node.js (ReScript+Deno per RSR policy)"))
+    "NOT a general-purpose web framework (specific to STAMP use case)"))

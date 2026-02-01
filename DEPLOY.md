@@ -14,13 +14,13 @@
 
 **1. Push to GitHub:**
 ```bash
-cd ~/Documents/hyperpolymath-repos/stamp-website
+cd ~/Documents/hyperpolymath-repos/stamp-protocol
 
 # Create GitHub repo
-gh repo create stamp-website --public --source=. --remote=origin --push
+gh repo create stamp-protocol --public --source=. --remote=origin --push
 
 # Or manually:
-git remote add origin https://github.com/hyperpolymath/stamp-website.git
+git remote add origin https://github.com/hyperpolymath/stamp-protocol.git
 git push -u origin main
 ```
 
@@ -31,7 +31,7 @@ git push -u origin main
 3. Click **Create a project**
 4. Click **Connect to Git**
 5. Authorize GitHub
-6. Select **stamp-website** repository
+6. Select **stamp-protocol** repository
 7. Configure build settings:
    - **Project name:** stamp-protocol
    - **Production branch:** main
@@ -60,7 +60,7 @@ npm install -g wrangler
 wrangler login
 
 # Deploy
-cd ~/Documents/hyperpolymath-repos/stamp-website
+cd ~/Documents/hyperpolymath-repos/stamp-protocol
 wrangler pages deploy . --project-name=stamp-protocol
 ```
 
