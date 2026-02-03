@@ -5,6 +5,9 @@
 
 Reference site and interactive demo for AVOW Protocol concepts (Subscriber Tracking with Attribution and Mathematically Proven consent).
 
+AVOW: Attributed Verification for Opt-in Willingness
+The AVOW Protocol is a high-assurance framework for managing the lifecycle of digital consent. By combining The Elm Architecture (TEA) with formal mathematical proofs, it ensures that a user’s willingness to participate is never assumed — it is always verified.
+
 ## What It Does
 
 - Demonstrates AVOW flows end-to-end.
