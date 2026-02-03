@@ -1,13 +1,13 @@
-# STAMP Protocol
+# AVOW Protocol
 
 [![Idris Inside](https://img.shields.io/badge/Idris-Inside-5E5086?style=flat&logo=idris&logoColor=white)](https://github.com/hyperpolymath/proven)
 ![Protocol Draft](https://img.shields.io/badge/Protocol-Draft-blue)
 
-Reference site and interactive demo for STAMP Protocol concepts (Subscriber Tracking with Attribution and Mathematically Proven consent).
+Reference site and interactive demo for AVOW Protocol concepts (Subscriber Tracking with Attribution and Mathematically Proven consent).
 
 ## What It Does
 
-- Demonstrates STAMP flows end-to-end.
+- Demonstrates AVOW flows end-to-end.
 - Shows how verifiable consent and unsubscribe flows could work (demo-level checks).
 - Ships a clean, static front end for easy hosting.
 
@@ -77,7 +77,7 @@ open index.html
 
 ### Current Implementation (2026-01-30)
 
-- **Interactive STAMP Demo** - Step-through demonstration
+- **Interactive AVOW Demo** - Step-through demonstration
 - **URL Validation** - Demonstrates safe URL checks using build-time proofs
 - **Real-time Validation** - Instant feedback on URL correctness
 - **TEA Architecture** - Predictable state management
@@ -105,12 +105,12 @@ open index.html
 ### Web UI Method
 
 1. Go to https://pages.cloudflare.com/
-2. Connect `stamp-protocol` repository
+2. Connect `avow-protocol` repository
 3. Build settings:
    - Framework: **None** (pre-built ReScript)
    - Build command: `deno task build`
    - Output directory: `/`
-4. Custom domain: `stamp-protocol.org`
+4. Custom domain: `avow-protocol.org`
 
 ### CLI Method
 
@@ -119,7 +119,7 @@ open index.html
 deno task build
 
 # Deploy with Wrangler
-wrangler pages deploy . --project-name=stamp-protocol
+wrangler pages deploy . --project-name=avow-protocol
 ```
 
 ## Domain & DNS Setup
@@ -127,7 +127,7 @@ wrangler pages deploy . --project-name=stamp-protocol
 ### Cloudflare DNS Records
 
 ```
-CNAME @ stamp-protocol.pages.dev (Proxied)
+CNAME @ avow-protocol.pages.dev (Proxied)
 CAA   @ 0 issue "letsencrypt.org"
 CAA   @ 0 issue "pki.goog"
 TXT   @ "v=spf1 -all"
@@ -145,9 +145,9 @@ See `.well-known/security.txt` for full configuration.
 ## File Structure
 
 ```
-stamp-protocol/
+avow-protocol/
 ├── src/
-│   ├── StampApp.res           # Main TEA application
+│   ├── AvowApp.res           # Main TEA application
 │   ├── ProvenResult.res       # Result type for error handling
 │   ├── ProvenSafeUrl.res      # Proven URL validation
 │   └── Tea.res                # Minimal TEA runtime
@@ -178,7 +178,7 @@ stamp-protocol/
 
 ## License
 
-AGPL-3.0-or-later
+PMPL-1.0-or-later
 
 ## Related Projects
 
