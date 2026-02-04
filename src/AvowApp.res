@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: PMPL-1.0-or-later
-// STAMP Protocol - Interactive Demo
+// AVOW Protocol - Interactive Demo
 // With proven formally verified URL validation
 
 open ProvenSafeUrl
@@ -26,7 +26,7 @@ type msg =
 let init = () => {
   let model = {
     step: Initial,
-    unsubscribeUrl: "https://stamp-protocol.org/unsubscribe?token=abc123",
+    unsubscribeUrl: "https://avow-protocol.org/unsubscribe?token=abc123",
     urlValid: false,
   }
   model
@@ -78,6 +78,6 @@ let render = (model: model) => {
   | Verified => "Verified"
   }
 
-  "STAMP Demo - Step: " ++ stepName ++
+  "AVOW Demo - Step: " ++ stepName ++
   " | URL Valid: " ++ (model.urlValid ? "✓" : "✗")
 }

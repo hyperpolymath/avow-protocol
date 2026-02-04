@@ -1,5 +1,5 @@
 {
-  "name": "stamp-protocol",
+  "name": "avow-protocol",
   "version": "1.0.0",
   "sources": [
     {
@@ -18,5 +18,9 @@
   "warnings": {
     "error": "+101"
   },
-  "bsc-flags": ["-open Belt"]
+  "bsc-flags": ["-open Belt"],
+  "comments": [
+    "TEA, router, and DOM mounter dependencies will be added once rescript-tea is fully integrated",
+    "Currently building core architecture with proven library calls"
+  ]
 }

@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STAMP Protocol — Proven Consent, Unsubscribe, and Rate Limits</title>
-    <meta name="description" content="STAMP Protocol is a design for verifiable consent, working unsubscribe links, and enforceable rate limits. This site demonstrates the concepts.">
+    <title>AVOW Protocol — Proven Consent, Unsubscribe, and Rate Limits</title>
+    <meta name="description" content="AVOW Protocol is a design for verifiable consent, working unsubscribe links, and enforceable rate limits. This site demonstrates the concepts.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://stamp-protocol.org/">
-    <meta property="og:title" content="STAMP Protocol — Proven Consent and Compliance">
+    <meta property="og:url" content="https://avow-protocol.org/">
+    <meta property="og:title" content="AVOW Protocol — Proven Consent and Compliance">
     <meta property="og:description" content="Demonstration of verifiable consent, working unsubscribe links, and enforceable rate limits.">
-    <meta property="og:site_name" content="STAMP Protocol">
-    <meta property="og:image" content="https://stamp-protocol.org/favicon.svg">
+    <meta property="og:site_name" content="AVOW Protocol">
+    <meta property="og:image" content="https://avow-protocol.org/favicon.svg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://stamp-protocol.org/">
-    <meta property="twitter:title" content="STAMP Protocol — Proven Consent and Compliance">
+    <meta property="twitter:url" content="https://avow-protocol.org/">
+    <meta property="twitter:title" content="AVOW Protocol — Proven Consent and Compliance">
     <meta property="twitter:description" content="Verifiable consent, working unsubscribe links, and enforceable rate limits.">
 
     <link rel="stylesheet" href="style.css">
@@ -29,12 +29,12 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <h1>STAMP Protocol</h1>
-            <p class="tagline">Secure Typed Announcement Messaging Protocol</p>
+            <h1>AVOW Protocol</h1>
+            <p class="tagline">Authenticated Verifiable Open Web Protocol</p>
             <p class="subtitle">A protocol design that aims to make consent, unsubscribe, and rate-limit compliance verifiable.</p>
 
             <div class="cta-buttons">
-                <a href="https://t.me/stamp_demo_bot" class="btn btn-primary" target="_blank">
+                <a href="https://t.me/avow_demo_bot" class="btn btn-primary" target="_blank">
                     Try Live Demo on Telegram →
                 </a>
                 <a href="#how-it-works" class="btn btn-secondary">
@@ -72,7 +72,7 @@
     <!-- Solution Section -->
     <section class="solution" id="how-it-works">
         <div class="container">
-            <h2>The STAMP Solution</h2>
+            <h2>The AVOW Solution</h2>
             <p class="intro">Use <strong>dependent types</strong> (Idris2) to make message properties verifiable at compile-time.</p>
 
             <div class="features">
@@ -116,7 +116,7 @@
                 </div>
 
                 <div class="tech-col">
-                    <h3>✅ With STAMP (Idris2)</h3>
+                    <h3>✅ With AVOW (Idris2)</h3>
                     <pre><code>record UnsubscribeLink where
     url : URL
     tested_at : Timestamp
@@ -137,7 +137,7 @@
             <!-- Live Browser Demo -->
             <div class="demo-box interactive-demo">
                 <h3>🔬 Live Verification Demo</h3>
-                <p>Test STAMP verification right in your browser (build-time proofs + demo rules):</p>
+                <p>Test AVOW verification right in your browser (build-time proofs + demo rules):</p>
 
                 <div class="demo-controls">
                     <div class="demo-control-group">
@@ -172,16 +172,16 @@
             <!-- Telegram Bot Demo -->
             <div class="demo-box">
                 <h3>📱 Telegram Bot Demo</h3>
-                <p>See STAMP in action with our live Telegram bot:</p>
+                <p>See AVOW in action with our live Telegram bot:</p>
                 <ol>
-                    <li>Open Telegram and search for <strong>@stamp_demo_bot</strong></li>
+                    <li>Open Telegram and search for <strong>@avow_demo_bot</strong></li>
                     <li>Send <code>/start</code> to subscribe</li>
                     <li>See consent flow steps in action</li>
                     <li>Send <code>/verify</code> to see full verification</li>
                     <li>Send <code>/unsubscribe</code> to test the demo flow</li>
                 </ol>
-                <a href="https://t.me/stamp_demo_bot" class="btn btn-primary" target="_blank">
-                    Open @stamp_demo_bot →
+                <a href="https://t.me/avow_demo_bot" class="btn btn-primary" target="_blank">
+                    Open @avow_demo_bot →
                 </a>
             </div>
         </div>
@@ -237,16 +237,20 @@
     <footer class="footer">
         <div class="container">
             <h2>Ready to Prove Compliance?</h2>
-            <p>Contact us to integrate STAMP into your platform.</p>
+            <p>Contact us to integrate AVOW into your platform.</p>
             <div class="footer-links">
-                <a href="https://github.com/hyperpolymath/libstamp" target="_blank">GitHub</a>
+                <a href="https://github.com/hyperpolymath/libavow" target="_blank">GitHub</a>
                 <a href="https://t.me/stamp_demo_bot" target="_blank">Demo Bot</a>
                 <a href="mailto:jonathan.jewell@open.ac.uk">Contact</a>
             </div>
-            <p class="copyright">© 2026 STAMP Protocol. Licensed under AGPL-3.0.</p>
+            <p class="copyright">© 2026 Jonathan D.A. Jewell. Licensed under PMPL-1.0-or-later.</p>
         </div>
     </footer>
 
+    <!-- TEA Application Root -->
+    <div id="avow-root"></div>
+
+    <script type="module" src="src/Main.res.js"></script>
     <script type="module" src="src/Website.res.js"></script>
     <script type="module" src="public/demo.js"></script>
 </body>

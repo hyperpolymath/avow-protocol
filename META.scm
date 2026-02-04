@@ -1,11 +1,11 @@
-;; STAMP Protocol - Meta-Level Information
-;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; AVOW Protocol - Meta-Level Information
+;; SPDX-License-Identifier: PMPL-1.0-or-later
 
 (meta
   (version "1.0")
   (schema-version "1.0.0")
   (created 1738252800)
-  (updated 1738267200)
+  (updated 1738702400)
 
   (architecture-decisions
     (adr
@@ -48,7 +48,7 @@
       (context
         "Initial idea focused on email spam. Realized potential extends to social media, SMS, any messaging.")
       (decision
-        "Design STAMP as transport-agnostic verification library. Works for email, Telegram, Twitter, Reddit, any platform.")
+        "Design AVOW as transport-agnostic verification library. Works for email, Telegram, Twitter, Reddit, any platform.")
       (consequences
         "POSITIVE: Much larger market ($1.4B+ vs $200M). Single codebase for all integrations. Network effects across platforms.
 
@@ -64,7 +64,7 @@
       (context
         "Zig FFI had version compatibility issues. Week 1 goal: working demo.")
       (decision
-        "Use mock verification library (TypeScript) for Telegram bot MVP. Replace with real libstamp in Week 2.")
+        "Use mock verification library (TypeScript) for Telegram bot MVP. Replace with real libavow in Week 2.")
       (consequences
         "POSITIVE: Unblocked deployment. Got working demo in Week 1. Validated UX before full implementation.
 
@@ -94,7 +94,7 @@
       (status "accepted")
       (date 1738252800)
       (context
-        "How to position STAMP to avoid being pigeonholed as 'email spam filter'.")
+        "How to position AVOW to avoid being pigeonholed as 'email spam filter'.")
       (decision
         "Present narrow solution publicly (email compliance), build broad architecture (works everywhere), let customers discover broader applications themselves ('Inception approach').")
       (consequences
@@ -112,7 +112,7 @@
       (context
         "License choice impacts adoption, monetization, community, competitive moat.")
       (decision
-        "Use AGPL-3.0-or-later for all STAMP code. Strong copyleft, network-use trigger.")
+        "Use AGPL-3.0-or-later for all AVOW code. Strong copyleft, network-use trigger.")
       (consequences
         "POSITIVE: Prevents AWS/Google from offering competing hosted service. Encourages paid licensing for proprietary use. Community contributions stay open.
 
@@ -126,7 +126,7 @@
       (status "accepted")
       (date 1738252800)
       (context
-        "Need fast, reliable hosting for stamp-protocol.org. Options: Netlify, Vercel, Cloudflare Pages, self-host.")
+        "Need fast, reliable hosting for avow-protocol.org. Options: Netlify, Vercel, Cloudflare Pages, self-host.")
       (decision
         "Use Cloudflare Pages with auto-deploy from GitHub.")
       (consequences
@@ -181,10 +181,10 @@
 
   (design-rationale
     (why-dependent-types
-      "Traditional testing can only check specific examples. Formal verification proves properties hold for ALL inputs. Dependent types make invalid states unrepresentable - you literally cannot compile code that violates verification requirements. This is STAMP's core innovation and competitive moat.")
+      "Traditional testing can only check specific examples. Formal verification proves properties hold for ALL inputs. Dependent types make invalid states unrepresentable - you literally cannot compile code that violates verification requirements. This is AVOW's core innovation and competitive moat.")
 
     (why-not-blockchain
-      "Blockchain adds complexity, cost, and centralization concerns without solving core problem. STAMP's innovation is formal verification, not decentralization. Cryptographic proofs don't need blockchain. Could integrate with blockchain identity systems if customers want it.")
+      "Blockchain adds complexity, cost, and centralization concerns without solving core problem. AVOW's innovation is formal verification, not decentralization. Cryptographic proofs don't need blockchain. Could integrate with blockchain identity systems if customers want it.")
 
     (why-start-with-telegram
       "Needed proof-of-concept platform. Telegram has: (1) Bot API (easy integration), (2) No approval process (fast iteration), (3) Privacy-conscious users (aligned values), (4) Free to use (no costs during development). Not target market, just proving ground.")
@@ -196,7 +196,7 @@
       "Email spam market is $200M+. Social media bot market is $1.2B+ (6x larger). Platforms spend $100M+/year fighting bots. Election interference, astroturfing, fake engagement erode trust. Advertisers lose confidence. This is where the real money and impact is. Email was starting point, but social media is endgame.")
 
     (why-formal-verification-matters
-      "Every other anti-spam solution is a heuristic or AI model - cat-and-mouse game with spammers. STAMP provides mathematical proof. When you have a proof, the game is over. Spammers cannot bypass proofs, they can only work within the constraints (which make spam uneconomic). This is fundamental difference.")
+      "Every other anti-spam solution is a heuristic or AI model - cat-and-mouse game with spammers. AVOW provides mathematical proof. When you have a proof, the game is over. Spammers cannot bypass proofs, they can only work within the constraints (which make spam uneconomic). This is fundamental difference.")
 
     (why-open-source
       "Trust. Security cannot be proprietary ('security through obscurity fails'). Community contributions accelerate development. AGPL license prevents freeloading while encouraging adoption. Platforms more likely to adopt open standard than proprietary system. Academic credibility (Idris2 research community). Competitive moat is expertise, not secrecy."))
@@ -218,4 +218,4 @@
       "Impact: Actually eliminate spam, not just reduce it"))
 
   (future-vision
-    "STAMP becomes the standard for verified messaging across all platforms. Just like HTTPS is now expected for websites, STAMP verification becomes expected for messaging platforms. Users demand 'Verified Human' badges. Platforms that don't adopt STAMP lose users to those that do. Spam/bots become economically unviable. Internet communication is trustworthy again."))
+    "AVOW becomes the standard for verified messaging across all platforms. Just like HTTPS is now expected for websites, AVOW verification becomes expected for messaging platforms. Users demand 'Verified Human' badges. Platforms that don't adopt AVOW lose users to those that do. Spam/bots become economically unviable. Internet communication is trustworthy again."))

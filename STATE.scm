@@ -1,40 +1,40 @@
-;; STAMP Protocol - Main Project State
-;; SPDX-License-Identifier: AGPL-3.0-or-later
-;; Updated: 2026-01-30
+;; AVOW Protocol - Main Project State
+;; SPDX-License-Identifier: PMPL-1.0-or-later
+;; Updated: 2026-02-04
 
 (state
   (metadata
     (version "1.0")
     (schema-version "1.0.0")
     (created 1738252800) ;; 2026-01-30
-    (updated 1738267200) ;; 2026-01-30 18:00
-    (project "STAMP Protocol")
-    (repo "hyperpolymath/stamp"))
+    (updated 1738702400) ;; 2026-02-04
+    (project "AVOW Protocol")
+    (repo "hyperpolymath/avow-protocol"))
 
   (project-context
-    (name "STAMP Protocol")
-    (tagline "Mathematically Proven Message Compliance")
+    (name "AVOW Protocol")
+    (tagline "Authenticated Verifiable Open Web Communication")
     (tech-stack
-      "Idris2" "Zig" "TypeScript" "Deno" "ReScript" "SQLite")
+      "Idris2" "Zig" "ReScript" "Deno" "casket-ssg" "cadre-tea-router" "rescript-tea" "SQLite")
     (primary-innovation
-      "First messaging protocol using dependent types for formal verification"))
+      "First messaging protocol using dependent types for formal verification with post-quantum cryptography (Dilithium5, Kyber-1024, SHAKE3-512)"))
 
   (current-position
     (phase "MVP Complete")
     (overall-completion 85)
     (components
-      (libstamp
+      (libavow
         (status "functional")
         (completion 70)
         (notes "ABI complete, FFI using mocks for now"))
       (telegram-bot
         (status "deployed")
         (completion 100)
-        (notes "Live at @stamp_demo_bot"))
+        (notes "Live at @avow_demo_bot"))
       (website
         (status "deployed")
         (completion 100)
-        (notes "Live at stamp-protocol.org with interactive demo"))
+        (notes "Live at avow-protocol.org with interactive demo"))
       (documentation
         (status "complete")
         (completion 100)
@@ -64,7 +64,7 @@
       (items
         "Test with 3-5 users"
         "Record demo video"
-        "Replace mocks with real libstamp"
+        "Replace mocks with real libavow"
         "Performance benchmarks"))
 
     (milestone "Weeks 3-8: Dating App Prep" :not-started
@@ -107,10 +107,10 @@
       "Monitor bot for any issues")
 
     (this-month
-      "Integrate real libstamp (replace mocks)"
-      "Write dating app one-pager"
-      "Research first customer targets"
-      "Apply to YC (optional)"))
+      "Integrate real libavow (replace mocks)"
+      "Set up casket-ssg + cadre-tea-router + rescript-tea stack"
+      "Configure Cloudflare DNS with Zero Trust"
+      "Implement post-quantum cryptography (Dilithium5, Kyber-1024)"))
 
   (session-history
     (snapshot
@@ -118,10 +118,10 @@
       (duration "8 hours")
       (phase "Week 1 MVP")
       (accomplishments
-        "Designed STAMP Protocol with Idris2 dependent types"
-        "Built libstamp core library (ABI + FFI)"
-        "Created working Telegram bot (@stamp_demo_bot)"
-        "Deployed professional website (stamp-protocol.org)"
+        "Designed AVOW Protocol with Idris2 dependent types"
+        "Built libavow core library (ABI + FFI)"
+        "Created working Telegram bot (@avow_demo_bot)"
+        "Deployed professional website (avow-protocol.org)"
         "Added interactive verification demo (ReScript)"
         "Wrote 52-week execution roadmap"
         "Completed comprehensive threat model"

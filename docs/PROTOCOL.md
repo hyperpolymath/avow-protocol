@@ -1,12 +1,12 @@
-# STAMP Protocol (Draft)
+# AVOW Protocol (Draft)
 
-STAMP (Subscriber Tracking with Attribution and Mathematically Proven consent) is a protocol design for verifiable consent and compliant messaging.
+AVOW (Authenticated Verifiable Open Web) Protocol is a protocol design for verifiable consent and compliant messaging.
 
 This repository is the **demo site** and reference implementation for key concepts. The protocol definition is a living draft and is intentionally short until the core invariants are finalized.
 
 ## 1. Overview
 
-STAMP aims to make consent, unsubscribe, and rate‑limit compliance **verifiable** instead of implied. It focuses on evidence that a platform enforced policy, without exposing private subscriber data.
+AVOW aims to make consent, unsubscribe, and rate‑limit compliance **verifiable** instead of implied. It focuses on evidence that a platform enforced policy, without exposing private subscriber data.
 
 ### Goals
 

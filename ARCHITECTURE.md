@@ -1,4 +1,4 @@
-# STAMP Protocol Website Architecture
+# AVOW Protocol Website Architecture
 
 ## Multi-Layer Stack (All Layers Working Together)
 
