@@ -7,3 +7,6 @@ node_modules/
 # ReScript build artifacts
 lib/
 *.res.js
+
+# npm lock file
+package-lock.json
