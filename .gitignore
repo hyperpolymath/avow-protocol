@@ -13,3 +13,12 @@ package-lock.json
 
 # Crash recovery artifacts
 ai-cli-crash-capture/
+target/
+_build/
+deps/
+.elixir_ls/
+.cache/
+*.tmp
+Thumbs.db
+build/
+dist/
