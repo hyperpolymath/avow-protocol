@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SPDX-License-Identifier: PMPL-1.0-or-later
+# SPDX-License-Identifier: MPL-2.0
 # Deploy all repos to Cloudflare Pages
 
 export CLOUDFLARE_API_TOKEN="xjmFyko52yeQ-3DPYxDTOZwM3DYwqRFU84f0UN40"

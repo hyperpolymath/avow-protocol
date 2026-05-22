@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: PMPL-1.0-or-later
+# SPDX-License-Identifier: MPL-2.0
 # AVOW Protocol - Architecture Setup Complete
 
 **Date:** 2026-02-04
@@ -13,7 +13,7 @@ Successfully renamed from STAMP Protocol to AVOW Protocol and set up the complet
 ### 1. Rebranding: STAMP → AVOW
 
 ✅ Updated all checkpoint files (STATE.scm, ECOSYSTEM.scm, META.scm)
-✅ Changed license from AGPL-3.0 to PMPL-1.0-or-later
+✅ Changed license from AGPL-3.0 to MPL-2.0
 ✅ Updated all documentation and references
 ✅ Changed @stamp_demo_bot to @avow_demo_bot
 ✅ Updated stamp-protocol.org to avow-protocol.org
@@ -248,7 +248,7 @@ Created proper dependency structure:
 
 ## License Note
 
-All files now use **PMPL-1.0-or-later** (Palimpsest License) as specified in the development standards.
+All files now use **MPL-2.0** (Palimpsest License) as specified in the development standards.
 
 AGPL-3.0 references have been replaced throughout the codebase.
 

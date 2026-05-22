@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "AVOW Protocol - Authenticated Verifiable Open Web Communication",
   "author": "Jonathan D.A. Jewell <jonathan.jewell@open.ac.uk>",
-  "license": "PMPL-1.0-or-later",
+  "license": "MPL-2.0",
   "type": "module",
   "scripts": {
     "build": "deno task build",
