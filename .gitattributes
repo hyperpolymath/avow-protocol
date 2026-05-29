@@ -1,0 +1,2 @@
+# Pending estate-wide policy: hide ReScript from primary-language detection.
+**/*.res linguist-detectable=false
