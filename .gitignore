@@ -8,8 +8,12 @@ node_modules/
 lib/
 *.res.js
 
-# npm lock file
+# npm lock files / config
 package-lock.json
+bun.lockb
+yarn.lock
+pnpm-lock.yaml
+.npmrc
 
 # Crash recovery artifacts
 ai-cli-crash-capture/
