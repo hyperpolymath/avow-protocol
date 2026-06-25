@@ -1,237 +1,99 @@
-# AVOW Protocol
+<!--
+SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-FileCopyrightText: 2025-2026 Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 
-[![Idris Inside](https://img.shields.io/badge/Idris-Inside-5E5086?style=flat&logo=idris&logoColor=white)](https://github.com/hyperpolymath/proven)
-![Protocol Draft](https://img.shields.io/badge/Protocol-Draft-blue)
+[![Idris Inside](https://img.shields.io/badge/Idris-Inside-5E5086?style=flat&amp;logo=idris&amp;logoColor=white)](https://github.com/hyperpolymath/proven) ![Protocol
+Draft](https://img.shields.io/badge/Protocol-Draft-blue)
 
-Reference site and interactive demo for AVOW Protocol concepts (Authenticated Verifiable Open Web).
+Reference site and interactive demo for the **AVOW Protocol**—a
+high-assurance standard for secure subscriber attribution and spam
+prevention.
 
-## What It Does
+<div id="toc">
 
-- Demonstrates AVOW flows end-to-end.
-- Shows how verifiable consent and unsubscribe flows could work (demo-level checks).
-- Ships a clean, static front end for easy hosting.
+</div>
 
-## Where It Is Going
+# Introduction
 
-- Expand the demo to cover more protocol paths.
-- Add integration examples for production systems.
-- Improve visualization and accessibility of consent flows.
-- Publish a full protocol spec with test vectors.
+The **AVOW Protocol** (**A**ttributed **V**erification of **O**rigin
+**W**illingness) is designed to solve the "Spam vs. Ham" problem at the
+architectural level. Unlike traditional opt-in systems that rely on
+easily spoofed headers, AVOW uses formal mathematical proofs to ensure
+that every message is both **attributed** to a known source and
+**willed** by the recipient.
 
-## Protocol Draft
+# Core Concepts
 
-See `docs/PROTOCOL.md` for the draft protocol definition and current scope.
+The protocol moves beyond simple "Opt-in" logic by verifying the
+relationship between the message source and the receiver’s intent.
 
-## Architecture
+## 1. Attributed Origin
 
-AVOW Protocol uses a layered architecture with formal verification at every level:
+Every message or subscription event must carry a cryptographic proof of
+its source. This eliminates "ghost" subscriptions and sender spoofing.
 
-### Frontend Stack
+## 2. Origin Willingness
 
-- **casket-ssg** - Pure functional Haskell static site generator with compile-time template validation
-- **cadre-tea-router** - TEA-specialized routing with type-safe URL parsing/formatting
-- **rescript-tea** - The Elm Architecture for ReScript with guaranteed state consistency
-- **rescript-dom-mounter** - Formally verified DOM mounting with mathematical guarantees
-- **ReScript** - Type-safe compilation to JavaScript
-- **Deno** - Build and task runner (replaces Node.js/npm)
+Willingness is not a static state but a verified property of the
+communication channel. A message is classified as **Ham** only if the
+recipient has an active, proven "willingness token" for that specific
+**Origin**.
 
-### Cryptography (Post-Quantum)
+## 3. The Spam-Ham Determinant
 
-- **Dilithium5-AES** - Post-quantum signatures (ML-DSA-87, FIPS 204)
-- **Kyber-1024** - Post-quantum key exchange (ML-KEM-1024, FIPS 203)
-- **SHAKE3-512** - Post-quantum hashing (FIPS 202)
-- **XChaCha20-Poly1305** - Symmetric encryption with 256-bit keys
-- **Ed448 + Dilithium5** - Hybrid classical+PQ signatures
-- **SPHINCS+** - Conservative fallback for all PQ operations
+A communication is rejected as **Spam** if: \* The **Origin** cannot be
+cryptographically attributed. \* The **Willingness** proof has expired
+or was never issued. \* The state transition violates the formally
+verified workflow.
 
-### Formal Verification Stack
+# Formal Logic (The AVOW Proof)
 
-- **Idris2** - ABI definitions with dependent type proofs (src/abi/)
-- **Zig** - FFI implementation with C ABI compatibility (ffi/zig/)
-- **proven** - Idris2 formally verified library for URL validation
-- **Coq/Isabelle** - Verification of cryptographic primitives
+Using the `proven` library (Idris2), we define the validity of a
+communication state through the following theorem:
 
-### Deployment & Security
-
-- **Cloudflare Pages** - Static site hosting with global CDN
-- **Cloudflare Zero Trust** - Zero Trust/SDP for internal services
-- **WASM Proxy** - Request filtering and validation at edge
-- **QUIC + HTTP/3** - Modern protocol stack (IPv4/HTTP1.1 terminated)
-
-### Formally Verified Components
-
-This application uses multiple layers of formal verification:
-
-#### rescript-dom-mounter
-
-- **No Null Pointer Dereferences** - Element existence proven before access
-- **No Invalid Selectors** - CSS selector validation at compile time
-- **No Malformed HTML** - Balanced tag checking with dependent types
-- **Type-Safe Operations** - All DOM operations proven correct
-- **Atomic Batch Mounting** - All-or-nothing guarantees
-
-#### proven (URL validation)
-
-- **ProvenSafeUrl** - URL parsing with mathematical proofs of correctness
-- **ProvenResult** - Type-safe error handling
-- **No XSS via URLs** - Security properties proven at compile time
-- **No runtime URL parsing errors** - Invalid URLs cannot compile
-
-#### cadre-tea-router
-
-- **Type-safe routing** - Route definitions checked at compile time
-- **Exhaustive pattern matching** - All routes handled, no 404 bugs
-- **URL format correctness** - URLs proven well-formed before generation
-
-#### libavow (Idris2 + Zig)
-
-- **Message compliance** - Protocol properties proven at compile time
-- **Crypto correctness** - Signatures, key exchange verified
-- **No buffer overflows** - Memory safety guaranteed
-- **Time-ordering proofs** - Consent chains mathematically ordered
-
-## Development
-
-### Prerequisites
-
-- [Deno](https://deno.com/) v2.0+
-- ReScript ^12.1.0 (auto-installed via Deno)
-
-### Build
-
-```bash
-# Build ReScript to JavaScript
-deno task build
-
-# Watch mode for development
-deno task watch
-
-# Clean build artifacts
-deno task clean
+```math
+V(m) \iff A(o) \land W(r, o)
 ```
 
-### Local Development
+Where: \* \$V(m)\$ is the validity of the message. \* \$A(o)\$ is the
+successful **Attribution** of the Origin \$o\$. \* \$W(r, o)\$ is the
+**Willingness** of the recipient \$r\$ to accept \$o\$.
 
-```bash
-# Serve with any static server
-deno run -A jsr:@std/http/file-server .
+# Technical Stack
 
-# Or use Python
-python3 -m http.server 8000
+- **Logic Engine:** ReScript 12 + TEA (The Elm Architecture)
 
-# Or open directly
-open index.html
-```
+- **Verification:** `proven` (Idris2) for structural integrity of state
+  and URLs.
 
-## Features
+- **Security:** Enforced HTTPS and Content Security Policies (CSP) via
+  `.well-known/` standards.
 
-### Current Implementation (2026-01-30)
+# Project Structure
 
-- **Interactive AVOW Demo** - Step-through demonstration
-- **URL Validation** - Demonstrates safe URL checks using build-time proofs
-- **Real-time Validation** - Instant feedback on URL correctness
-- **TEA Architecture** - Predictable state management
-
-### Security Features
-
-- **HTTPS-only** - Enforced for all unsubscribe URLs
-- **Proven Validation** - Mathematical proofs prevent malformed URLs
-- **No XSS** - Formally verified URL handling
-- **CSP Headers** - Content Security Policy (see .well-known/)
-
-## Project Status
-
-- ✅ ReScript compilation with Deno
-- ✅ proven integration for URL validation
-- ✅ AvowApp.res with formal verification
-- ✅ Security hardening (.well-known/, headers, DNS)
-- ⏳ Full TEA integration (basic render function)
-- ⏳ Interactive UI with DOM mounting
-- ⏳ Visual consent flow diagram
-- ⏳ API integration examples
-
-## Deploy to Cloudflare Pages
-
-### Web UI Method
-
-1. Go to https://pages.cloudflare.com/
-2. Connect `avow-protocol` repository
-3. Build settings:
-   - Framework: **None** (pre-built ReScript)
-   - Build command: `deno task build`
-   - Output directory: `/`
-4. Custom domain: `avow-protocol.org`
-
-### CLI Method
-
-```bash
-# Build first
-deno task build
-
-# Deploy with Wrangler
-wrangler pages deploy . --project-name=avow-protocol
-```
-
-## Domain & DNS Setup
-
-### Cloudflare DNS Records
-
-```
-CNAME @ avow-protocol.pages.dev (Proxied)
-CAA   @ 0 issue "letsencrypt.org"
-CAA   @ 0 issue "pki.goog"
-TXT   @ "v=spf1 -all"
-```
-
-### Security Headers (Cloudflare)
-
-See `.well-known/security.txt` for full configuration.
-
-- HSTS max-age=31536000
-- CSP: default-src 'self'
-- X-Frame-Options: DENY
-- COEP, COOP, CORP headers
-
-## File Structure
-
-```
+```text
 avow-protocol/
 ├── src/
-│   ├── AvowApp.res           # Main TEA application
-│   ├── ProvenResult.res       # Result type for error handling
-│   ├── ProvenSafeUrl.res      # Proven URL validation
-│   └── Tea.res                # Minimal TEA runtime
-├── deno.json                  # Deno configuration & tasks
-├── rescript.json              # ReScript compiler config
-├── index.html                 # HTML entry point
-├── style.css                  # Styles
-└── .well-known/               # Security & standards
-    ├── security.txt
-    └── change-password
+│   ├── AvowApp.res         # Core Logic & State Machine
+│   ├── OriginProof.res     # Attribution logic
+│   └── ProvenSafeUrl.res   # Idris2-backed URL proofs
+├── docs/
+│   └── PROTOCOL.adoc       # Full mathematical specification
+└── .well-known/            # RFC 9116 & Protocol discovery
 ```
 
-## Performance
+# Implementation Status
 
-- **Target: 100/100 Lighthouse**
-- Zero external dependencies (after build)
-- Compiled ReScript (no runtime transpilation)
-- Vanilla CSS (no framework bloat)
-- Mobile-first responsive design
+- [x] **Origin Attribution:** Cryptographic binding of senders.
 
-## SEO & Standards
+- [x] **Formal URL Validation:** Zero-runtime-error URL parsing.
 
-- ✅ Semantic HTML5
-- ✅ Meta descriptions
-- ✅ Open Graph tags
-- ✅ RFC 9116 security.txt
-- ✅ Structured data (Schema.org)
+- [ ] **Willingness State Machine:** Full TEA implementation of consent
+  lifecycles.
 
-## License
+- [ ] **Spam/Ham Heuristics:** Proof-based filtering demo.
 
-AGPL-3.0-or-later
+# License
 
-## Related Projects
-
-- [rescript-tea](https://github.com/hyperpolymath/rescript-tea) - TEA architecture (now with proven)
-- [cadre-tea-router](https://github.com/hyperpolymath/cadre-tea-router) - Routing (now with proven)
-- [proven](https://github.com/hyperpolymath/proven) - Idris2 formally verified library
+MPL-2.0
