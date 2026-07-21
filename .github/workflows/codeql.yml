@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MPL-2.0
 # For most projects, this workflow file will not need changing; you simply need
 # to commit it to your repository.
 #
@@ -18,6 +19,11 @@ on:
     branches: [ "main" ]
   schedule:
     - cron: '15 12 * * 3'
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
 
 jobs:
   analyze:
@@ -67,7 +73,7 @@ jobs:
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v4
+      uses: github/codeql-action/init@e0647621c2984b5ed2f768cb892365bf2a616ad1 # v4
       with:
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
@@ -96,6 +102,6 @@ jobs:
         exit 1
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v4
+      uses: github/codeql-action/analyze@e0647621c2984b5ed2f768cb892365bf2a616ad1 # v4
       with:
         category: "/language:${{matrix.language}}"
