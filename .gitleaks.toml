@@ -1,0 +1,34 @@
+# SPDX-License-Identifier: MPL-2.0
+# gitleaks configuration for avow-protocol.
+#
+# TWO SILENT SYNTAX TRAPS in the pinned gitleaks — both fail with NO error and
+# NO effect, so a config written either way looks correct and suppresses
+# nothing:
+#   1. The block must be `[allowlist]` (SINGULAR). `[[allowlists]]` is ignored.
+#   2. `regexes = [...]` is ignored; only `paths` is honoured.
+#
+# ⚠ NOTHING HERE SUPPRESSES SOURCE OR SCRIPTS. This repository had a REAL
+# Cloudflare API token committed in deploy-repos.sh and published for as long
+# as the repo has been public. The scanner found it only because it inspects
+# generic high-entropy strings — Cloudflare tokens carry no prefix, so
+# prefix-matching scanners miss them entirely. Keep these exclusions narrow.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = """
+Lockfile integrity hashes and documentation placeholders.
+
+telegram-bot/deno.lock — content-addressed integrity hashes, machine-generated.
+telegram-bot/README.md, NEXT-STEPS.md — setup docs showing where a bot token
+goes, not a token.
+avow-lib/ffi/zig/src/example.zig — an example carrying the literal
+`.token = "abc123def456..."` with the trailing comment `// Would be real token`.
+"""
+paths = [
+  '''^telegram-bot/deno\.lock$''',
+  '''^telegram-bot/README\.md$''',
+  '''^telegram-bot/NEXT-STEPS\.md$''',
+  '''^avow-lib/ffi/zig/src/example\.zig$''',
+]
