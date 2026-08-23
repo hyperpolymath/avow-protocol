@@ -124,17 +124,17 @@ All should return:
 ## Architecture Stack
 
 ### AVOW Protocol
-- **Frontend:** ReScript → JavaScript (ES6)
-- **Build:** Deno + ReScript compiler
+- **Frontend:** AffineScript → JavaScript (ES6)
+- **Build:** Deno + AffineScript compiler
 - **SSG:** casket-ssg (Haskell)
 - **Router:** cadre-tea-router
-- **State:** rescript-tea (The Elm Architecture)
+- **State:** affinescript-tea (The Elm Architecture)
 - **Verification:** Idris2 + Zig FFI
 - **Crypto:** Dilithium5, Kyber-1024, SHAKE3-512
 
 ### A2ML
 - **Format:** A2ML markup language
-- **Compiler:** ReScript-based
+- **Compiler:** AffineScript-based
 - **Output:** Static HTML/CSS/JS
 
 ### K9-SVC

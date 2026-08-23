@@ -8,8 +8,8 @@
 - Pure functional, predictable output
 
 ### Run-Time (Client-Side)
-- **ReScript** - Type-safe JavaScript compilation
-- **ReScript-TEA** - The Elm Architecture for predictable state management
+- **AffineScript** - Type-safe JavaScript compilation
+- **AffineScript-TEA** - The Elm Architecture for predictable state management
 - **Cadre-TEA-Router** - Type-safe client-side routing
 
 ### Verification Layers
@@ -38,7 +38,7 @@ Casket (Haskell) → Static HTML
     ↓
 Browser Loads Page
     ↓
-ReScript-TEA Initializes
+AffineScript-TEA Initializes
     ↓
 User Interaction (click demo)
     ↓
@@ -50,7 +50,7 @@ a2ml Generates Proof (cryptographic)
     ↓
 proven Ensures Safety (Idris2 proofs)
     ↓
-DOM Updated (ReScript)
+DOM Updated (AffineScript)
 ```
 
 ## Why This Stack?
@@ -60,7 +60,7 @@ DOM Updated (ReScript)
 - ✅ Perfect for static site generation
 - ✅ Not destroyed or replaced - enhanced!
 
-### ReScript + TEA
+### AffineScript + TEA
 - ✅ Type safety for client-side code
 - ✅ Predictable state management
 - ✅ Model-Update-View pattern
@@ -90,8 +90,8 @@ DOM Updated (ReScript)
 document.querySelector('.stat-card').style.opacity = '1'
 ```
 
-### With ReScript-TEA
-```rescript
+### With AffineScript-TEA
+```affinescript
 // Type-safe, compile-time checked
 let update = (model, msg) =>
   switch msg {
@@ -100,7 +100,7 @@ let update = (model, msg) =>
 ```
 
 ### With k9-svc
-```rescript
+```affinescript
 // Component proves it maintains invariants
 (k9-svc-check unsubscribe-link
   (response-code 200)
@@ -109,7 +109,7 @@ let update = (model, msg) =>
 ```
 
 ### With a2ml
-```rescript
+```affinescript
 // Typed, verifiable proof
 (proof consent
   (action subscribe)
@@ -126,7 +126,7 @@ parseUrl : String -> Either ProofOfError (Url, ProofOfValid)
 ## No Layers Destroyed
 
 - ✅ **Haskell (Casket)** - Still generates static HTML
-- ✅ **ReScript** - Adds type safety on top
+- ✅ **AffineScript** - Adds type safety on top
 - ✅ **TEA** - Adds state management on top
 - ✅ **k9-svc** - Adds validation where relevant
 - ✅ **a2ml** - Adds typed proofs where relevant

@@ -75,9 +75,9 @@ See the [proven library](https://github.com/hyperpolymath/proven) for details.
 ## Learn More
 
 - [STAMP Protocol Draft](https://github.com/hyperpolymath/stamp-protocol/blob/main/docs/PROTOCOL.md)
-- [ReScript TEA](https://github.com/hyperpolymath/rescript-tea)
+- [AffineScript TEA](https://github.com/hyperpolymath/affinescript-tea)
 - [Proven Library](https://github.com/hyperpolymath/proven)
-- [SafeDOM Mounter](https://github.com/hyperpolymath/rescript-dom-mounter)
+- [SafeDOM Mounter](https://github.com/hyperpolymath/affinescript-dom-mounter)
 
 ---
 

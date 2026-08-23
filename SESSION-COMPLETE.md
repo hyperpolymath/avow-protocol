@@ -22,7 +22,7 @@
 
 ### 3. Professional Website ✅
 - **https://stamp-protocol.org** - Live on Cloudflare Pages
-- **Interactive demo** - Browser-based verification (ReScript)
+- **Interactive demo** - Browser-based verification (AffineScript)
 - **Mobile responsive** - SEO optimized
 - **GitHub:** https://github.com/hyperpolymath/stamp-website
 
@@ -73,7 +73,7 @@
 ```
 ✓ #1  - Design STAMP core Idris2 types and proof obligations
 ✓ #2  - Build libstamp proof-of-concept with Zig FFI
-✓ #3  - Create interactive demo website (ReScript + WASM)
+✓ #3  - Create interactive demo website (AffineScript + WASM)
 ✓ #4  - Write comprehensive threat model analysis
 ✓ #5  - Build STAMP Telegram bot proof-of-concept
 ✓ #6  - Design STAMP for social media platforms
@@ -122,7 +122,7 @@
 ### Code Repositories
 - `libstamp/` - Core verification library (Idris2 + Zig)
 - `stamp-telegram-bot/` - Working bot (TypeScript + Deno)
-- `stamp-website/` - Live website (ReScript + HTML/CSS)
+- `stamp-website/` - Live website (AffineScript + HTML/CSS)
 
 ---
 
