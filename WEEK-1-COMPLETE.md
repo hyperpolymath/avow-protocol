@@ -26,7 +26,7 @@
 - **https://stamp-protocol.org** - Live on Cloudflare Pages
   - Hero section with clear value prop
   - Problem/solution framework
-  - Interactive browser demo (ReScript)
+  - Interactive browser demo (AffineScript)
   - Technical comparison
   - Live bot link
 - **Features:**
@@ -41,7 +41,7 @@
   - Test unsubscribe link verification
   - Test consent chain verification
   - See mathematical proofs live
-- **Tech:** ReScript (type-safe JavaScript)
+- **Tech:** AffineScript (type-safe JavaScript)
 - **Embedded:** stamp-protocol.org
 
 ### 5. Strategic Planning
@@ -151,7 +151,7 @@ hyperpolymath-repos/
 | **ABI** | Idris2 | Formal verification, dependent types |
 | **FFI** | Zig | C-compatible, cross-platform |
 | **Bot** | TypeScript + Deno | Telegram integration |
-| **Website** | ReScript + HTML/CSS | Type-safe frontend |
+| **Website** | AffineScript + HTML/CSS | Type-safe frontend |
 | **Database** | SQLite | Persistence (for now) |
 | **Deploy** | Cloudflare Pages | Website hosting |
 | **Runtime** | Deno | Bot runtime |

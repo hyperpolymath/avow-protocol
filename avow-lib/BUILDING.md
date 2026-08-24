@@ -37,7 +37,7 @@ For the **Telegram bot demo** (your Week 1 goal), you don't actually need the fu
 
 **What you can do instead:**
 
-1. **Mock the verification functions** in TypeScript/ReScript
+1. **Mock the verification functions** in TypeScript/AffineScript
 2. Build the Telegram bot with mocked verification
 3. Prove the UX works
 4. Come back and integrate real FFI later

@@ -62,7 +62,7 @@ successful **Attribution** of the Origin \$o\$. \* \$W(r, o)\$ is the
 
 # Technical Stack
 
-- **Logic Engine:** ReScript 12 + TEA (The Elm Architecture)
+- **Logic Engine:** AffineScript 12 + TEA (The Elm Architecture)
 
 - **Verification:** `proven` (Idris2) for structural integrity of state
   and URLs.

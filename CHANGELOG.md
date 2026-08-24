@@ -38,13 +38,13 @@ this project aims to follow [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix: apply safety triangle fixes (recipe-remove-believe-me)
 - fix: update license from MPL-2.0 to PMPL-1.0-or-later
 - fix: remove duplicate SCM files from root
-- fix: use Deno setup action and task runner for ReScript build
+- fix: use Deno setup action and task runner for AffineScript build
 - fix: use original HTML with full styling
 - fix: install Pandoc in workflow
 
 ### Changed
 
-- refactor: replace all TypeScript with ReScript
+- refactor: replace all TypeScript with AffineScript
 
 ### Documentation
 

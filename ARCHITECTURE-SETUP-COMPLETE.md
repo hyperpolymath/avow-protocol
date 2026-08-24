@@ -34,13 +34,13 @@ Created complete integration of:
 - Routes: Home, About, Docs, Demo, Verify(messageId)
 - Built on cadre-router primitives
 
-#### rescript-tea (The Elm Architecture)
+#### affinescript-tea (The Elm Architecture)
 - Created `src/AvowTea.res` with full TEA implementation
 - Model, Messages, Init, Update, View, Subscriptions
 - Integrated with AvowRouter for URL-driven state
 - Post-quantum crypto initialization support
 
-#### rescript-dom-mounter (Formally Verified DOM)
+#### affinescript-dom-mounter (Formally Verified DOM)
 - Created `src/AvowSafeMount.res` for safe mounting
 - Mathematical guarantees: no null pointers, valid selectors, well-formed HTML
 - Batch mounting support
@@ -91,7 +91,7 @@ Created comprehensive Cloudflare configuration:
 ✅ `README.md` - Complete architecture section with verification layers
 ✅ `index.html` - Updated with avow-root div and correct references
 ✅ `deno.json` - Added proper import paths for all dependencies
-✅ `rescript.json` - Configured for avow-protocol
+✅ `affinescript.json` - Configured for avow-protocol
 ✅ `package.json` - Created with correct author and license
 
 ## Architecture Diagram
@@ -128,10 +128,10 @@ Created comprehensive Cloudflare configuration:
 │                        │                                     │
 │                        ▼                                     │
 │  ┌──────────────────────────────────────────────────┐     │
-│  │  ReScript Application (Main.res)                 │     │
+│  │  AffineScript Application (Main.res)                 │     │
 │  │  ┌────────────────────────────────────────────┐ │     │
 │  │  │ AvowSafeMount.res                          │ │     │
-│  │  │ • rescript-dom-mounter                     │ │     │
+│  │  │ • affinescript-dom-mounter                     │ │     │
 │  │  │ • Formally verified mounting               │ │     │
 │  │  │ • Idris2 proofs of correctness             │ │     │
 │  │  └────────────┬───────────────────────────────┘ │     │
@@ -176,10 +176,10 @@ Created comprehensive Cloudflare configuration:
 2. **Network Layer** - Post-quantum TLS (Kyber-1024)
 3. **Edge Layer** - WASM validation (to be implemented)
 4. **Static Site** - casket-ssg compile-time checks
-5. **DOM Mounting** - rescript-dom-mounter Idris2 proofs
+5. **DOM Mounting** - affinescript-dom-mounter Idris2 proofs
 6. **Routing** - cadre-tea-router type-safe patterns
 7. **URL Parsing** - proven Idris2 verification
-8. **Application State** - rescript-tea exhaustive pattern matching
+8. **Application State** - affinescript-tea exhaustive pattern matching
 9. **Protocol Layer** - libavow dependent type proofs
 10. **Cryptography** - Coq/Isabelle verified primitives
 
@@ -189,9 +189,9 @@ Created comprehensive Cloudflare configuration:
 1. ✅ Rename STAMP to AVOW throughout codebase
 2. ✅ Set up casket-ssg integration
 3. ✅ Create cadre-tea-router architecture
-4. ✅ Build rescript-tea application
+4. ✅ Build affinescript-tea application
 5. ✅ Configure Cloudflare DNS and security
-6. ⏳ Build and test ReScript compilation
+6. ⏳ Build and test AffineScript compilation
 7. ⏳ Deploy to Cloudflare Pages
 
 ### Short Term (This Week)
@@ -215,13 +215,13 @@ Created comprehensive Cloudflare configuration:
 Created proper dependency structure:
 
 - `deno.json` - Import maps for local repos
-- `package.json` - npm dependencies (ReScript toolchain)
-- `rescript.json` - ReScript configuration
+- `package.json` - npm dependencies (AffineScript toolchain)
+- `affinescript.json` - AffineScript configuration
 - Repos available:
   - `/var/mnt/eclipse/repos/casket-ssg`
   - `/var/mnt/eclipse/repos/cadre-tea-router`
-  - `/var/mnt/eclipse/repos/rescript-tea`
-  - `/var/mnt/eclipse/repos/rescript-dom-mounter`
+  - `/var/mnt/eclipse/repos/affinescript-tea`
+  - `/var/mnt/eclipse/repos/affinescript-dom-mounter`
   - `/var/mnt/eclipse/repos/proven`
 
 ## Files Created/Modified
@@ -241,7 +241,7 @@ Created proper dependency structure:
 - `STATE.scm` - Updated project state, tech stack, license
 - `ECOSYSTEM.scm` - Updated related projects, license
 - `META.scm` - Updated license
-- `rescript.json` - Updated package name and configuration
+- `affinescript.json` - Updated package name and configuration
 - `deno.json` - Added import paths for dependencies
 - `index.html` - Updated bot references, license, added avow-root div
 - `README.md` - Complete architecture section rewrite
